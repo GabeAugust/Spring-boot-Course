@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CadastrodeninjasApplication {
+public class CadastroDeNinjasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CadastrodeninjasApplication.class, args);
+		SpringApplication.run(CadastroDeNinjasApplication.class, args);
 	}
+
 
 }
