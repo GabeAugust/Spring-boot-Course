@@ -1,13 +1,18 @@
 package dev.java10x.cadastrodeninjas.ninjas.model;
 
-
 import dev.java10x.cadastrodeninjas.missoes.MissoesModel;
 import jakarta.persistence.*;
-
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_ninjas")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class NinjaModel {
 
     @Id
@@ -22,48 +27,4 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
 
-
-    public NinjaModel(){
-
-    }
-
-
-    public NinjaModel(Long id, String nome, String email, int idade) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 }
