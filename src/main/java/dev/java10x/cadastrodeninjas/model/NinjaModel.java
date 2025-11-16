@@ -1,6 +1,5 @@
-package dev.java10x.cadastrodeninjas.ninjas.model;
+package dev.java10x.cadastrodeninjas.model;
 
-import dev.java10x.cadastrodeninjas.missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +19,10 @@ public class NinjaModel {
     private Long id;
 
     private String nome;
+
+    @Column(unique = true)
     private String email;
+
     private int idade;
 
     @ManyToOne
