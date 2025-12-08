@@ -33,18 +33,18 @@ public class NinjaController {
     }
 
     @GetMapping("/ninja/{id}")
-    public NinjaModel listNinjaById(@PathVariable  Long id){
+    public NinjaModel listNinjaById(@PathVariable Long id){
         return service.listNinja(id);
     }
 
-    @PutMapping("/ninja/{id}")
-    public String editNinja(){
-        return "";
+    @PatchMapping("/ninja/{id}")
+    public NinjaModel editNinja(@PathVariable Long id, @RequestBody NinjaModel ninja){
+        return service.updateNinja(id, ninja);
     }
 
     @DeleteMapping("/ninja/{id}")
-    public String deleteNinja(){
-        return "";
+    public void deleteNinja(@PathVariable  Long id){
+        service.deleteNinja(id);
     }
 
 }
