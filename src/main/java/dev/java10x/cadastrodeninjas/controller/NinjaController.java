@@ -29,12 +29,12 @@ public class NinjaController {
 
     @GetMapping("/ninja")
     public List<NinjaModel> listNinjas(){
-        return service.listNinja();
+        return service.listNinjas();
     }
 
     @GetMapping("/ninja/{id}")
-    public String listNinjaById(){
-        return "aa";
+    public NinjaModel listNinjaById(@PathVariable  Long id){
+        return service.listNinja(id);
     }
 
     @PutMapping("/ninja/{id}")
