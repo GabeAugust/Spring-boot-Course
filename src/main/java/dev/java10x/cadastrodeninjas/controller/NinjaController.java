@@ -1,10 +1,21 @@
 package dev.java10x.cadastrodeninjas.controller;
 
+
+import dev.java10x.cadastrodeninjas.model.NinjaModel;
+import dev.java10x.cadastrodeninjas.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping
 public class NinjaController {
+
+    private NinjaService service;
+
+    public NinjaController(NinjaService service) {
+        this.service = service;
+    }
 
     @GetMapping("/boasvindas")
     public String boasVindas(){
@@ -17,13 +28,13 @@ public class NinjaController {
     }
 
     @GetMapping("/ninja")
-    public String listNinjas(){
-        return "aaaa";
+    public List<NinjaModel> listNinjas(){
+        return service.listNinja();
     }
 
     @GetMapping("/ninja/{id}")
-    public String listNinja(){
-        return "";
+    public String listNinjaById(){
+        return "aa";
     }
 
     @PutMapping("/ninja/{id}")
